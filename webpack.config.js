@@ -1,7 +1,9 @@
 var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
-var {CleanWebpackPlugin} = require('clean-webpack-plugin')
+var {
+  CleanWebpackPlugin
+} = require('clean-webpack-plugin')
 module.exports = {
   entry: {
     app: './src/main.js'
@@ -12,8 +14,7 @@ module.exports = {
     // chunkFilename: '[id].[chunkhash].js'
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.css$/,
         use: [
           'vue-style-loader',
@@ -109,11 +110,15 @@ module.exports = {
     // overlay: true,
     hot: true,
     inline: true,
-    stats: {colors: true},
+    stats: {
+      colors: true
+    },
     proxy: {
       '/hospital': {
         target: 'http://localhost:8080',
-        pathRewrite: {['^' + process.env.VUE_APP_BASE_API]: '/'},
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_BASE_API]: '/'
+        },
         changeOrigin: true
       }
     }

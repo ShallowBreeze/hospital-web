@@ -145,7 +145,7 @@
         },
         // 当登录的是医生的账号时
         getDoctorInfo: function () {
-          getDoctorInfo(parseInt(this.accountIdentify)).then(res => {
+          getDoctorInfo(this.accountIdentify).then(res => {
             if (res.code === 200) {
               this.infoForm = res.data
             }

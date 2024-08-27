@@ -7,6 +7,10 @@
           <span class="title">编号：</span>
           <el-input v-model="doctorData.ID" placeholder="请输入内容" class="input-box" :disabled="true"></el-input>
         </div>
+        <!-- <div class="info-in-box" >
+          <span class="title">账号：</span>
+          <el-input v-model="doctorData.account" placeholder="请输入内容" class="input-box" :disabled="doctorData.isAdd"></el-input>
+        </div> -->
         <div class="info-in-box">
           <span class="title">姓名：</span>
           <el-input v-model="doctorData.name" placeholder="请输入内容" class="input-box"></el-input>
@@ -41,7 +45,7 @@
               v-for="item in departmentSelectData"
               :key="item.id"
               :label="item.name"
-              :value="item.id">
+              :value="item.id+''">
             </el-option>
           </el-select>
         </div>
@@ -52,7 +56,7 @@
               v-for="item in outpatientSelectData"
               :key="item.id"
               :label="item.name"
-              :value="item.id">
+              :value="item.id+''">
             </el-option>
           </el-select>
         </div>
@@ -142,6 +146,7 @@
       // 向数据库添加医生数据
       addDoctor: function () {
         this.loading = true;
+
         addDoctor({
           gender: this.doctorData.gender,
           jobTitle: this.doctorData.jobTitle,
@@ -157,6 +162,7 @@
               message: '添加成功',
               type: 'success'
             });
+            this.$router.go(-1);
           }
         }).catch(() => {
           this.loading = false;

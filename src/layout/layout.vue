@@ -68,14 +68,14 @@
 
 <script>
   import {getPermission} from "@/permission";
-  import {getToken} from "@/utils/auth";
+  import {getToken,getUsername} from "@/utils/auth";
 
   export default {
     name: "home",
     data() {
       return {
         sysName: '挂号系统',
-        sysUserName: 'admin',
+        sysUserName: '',
         collapsed: false
       }
     },
@@ -94,6 +94,7 @@
       if (getToken()) {
         getPermission()
       }
+      this.sysUserName = getUsername();
       console.log(this.$router)
       console.log('skdlfjdf')
     }

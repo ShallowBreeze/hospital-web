@@ -8,14 +8,14 @@ import {systemRouterMap, doctorRouterMap,constantRouterMap} from "./router";
 import {getCookie, setCookie} from "@/utils/cookies";
 
 export function getPermission() {
-
+  debugger;
   if (getCookie('username') === 'admin' ) {
     let array = constantRouterMap.concat(systemRouterMap);
     router.options.routes = array;
-    router.onReady(() => {
+    // router.onReady(() => {
 
       router.addRoutes(array)
-    });
+    // });
   } else {
     let array = constantRouterMap.concat(doctorRouterMap);
     router.options.routes = array;

@@ -4,11 +4,8 @@
  * 2、将时间转为数字
  * **/
 // 1、将数字转为时间
-export function outCallTime(value) {
-  if (value === 1) {
-    return '08:30~12:00'
-  }
-  return '14:00~18:00'
+export function outCallTime(startTime, endTime) {
+  return startTime + "~" + endTime
 }
 // 2、将时间转为数字
 export function timeToNum(value) {
@@ -28,7 +25,7 @@ export function getGender(num) {
 // 获取出诊时间段
 export function getTimePeriod(num) {
   let time = '';
-  switch(num) {
+  switch (num) {
     case 1:
       time = '08:30~09:00';
       break;

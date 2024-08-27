@@ -66,7 +66,14 @@
                 label: '医生ID',
                 width: '100',
                 option: ''
-              }, {
+              },
+ /*             {
+                prop: 'account',
+                label: '账号',
+                width: '100',
+                option: ''
+              }, */
+              {
                 prop: 'name',
                 label: '姓名',
                 width: '130',
@@ -194,6 +201,7 @@
               res.data.list.forEach(function (item, index) {
                 _this.tableAllData.tableData.push({
                   ID: item.id,
+                  // account:item.account,
                   name: item.name,
                   gender: _this.getGender(item.gender),
                   jobTitle: item.jobTitle,

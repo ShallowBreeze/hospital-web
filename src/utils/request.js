@@ -47,7 +47,7 @@ service.interceptors.response.use(
         }).then(() => {
           store.dispatch('FedLogOut').then(() => {
             // 为了重新实例化vue-router对象，避免有bug
-            location.reload()
+             location.href = '/home';
           })
         })
       } // if 401 end

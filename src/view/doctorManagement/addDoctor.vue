@@ -14,11 +14,13 @@
         doctorData: {
           name: '',
           gender: 1,
+          // account:'',
           jobTitle: '',
-          specialId: '',
-          outpatientId: '',
+          specialId: 0,
+          outpatientId: 0,
           specialty: '',
-          isEdit: false
+          isEdit: false,
+          // isAdd: false
         }
       }
     },

@@ -23,6 +23,7 @@
         this.doctorInfo.gender = 2
       }
       this.doctorInfo['isEdit'] = true
+      // this.doctorInfo['isAdd'] = true
       console.log(this.doctorInfo)
     }
   }

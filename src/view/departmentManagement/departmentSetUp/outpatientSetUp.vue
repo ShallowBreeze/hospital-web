@@ -269,6 +269,8 @@
         this.hospitalData = JSON.parse(sessionStorage.getItem('hospitalList'));
         this.selectHospitalID = this.$route.query.hospitalID;
         this.selectDepartmentID = this.$route.query.departmentID;
+        console.log("selectHospitalID"+this.selectHospitalID);
+        console.log(this.selectDepartmentID);
         this.getHospitalDepartmentList();
         this.compareOutpatient();
         sessionStorage.removeItem('hospitalList')

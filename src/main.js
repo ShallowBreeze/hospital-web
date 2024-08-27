@@ -15,7 +15,6 @@ for (let item in filters) {
   Vue.filter(item, filters[item])
 }
 Vue.config.productionTip = false
-
 // 引入常用的组件
 import tableList from '@/components/tableList'
 Vue.component('tableList',tableList);

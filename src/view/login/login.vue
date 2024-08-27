@@ -60,7 +60,7 @@
               this.$store.dispatch('Login', this.ruleForm2).then(() => {
               if (this.checked) {
                 setCookie("username",this.ruleForm2.username,15);
-                setCookie("password",this.ruleForm2.password,15);
+                // setCookie("password",this.ruleForm2.password,15);
               }
 
               _this.$router.push({path: this.redirect || '/home'});
@@ -82,7 +82,7 @@
     },
     created() {
       this.ruleForm2.username = getCookie('username');
-      this.ruleForm2.password = getCookie('password');
+      // this.ruleForm2.password = getCookie('password');
       if(this.ruleForm2.username === undefined||this.ruleForm2.username==null||this.ruleForm2.username===''){
         this.ruleForm2.username = 'admin';
       }
